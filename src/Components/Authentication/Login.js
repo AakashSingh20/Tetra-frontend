@@ -37,10 +37,10 @@ export const Login = () => {
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem("userInfo", JSON.stringify(res.data));
-          // console.log(res.data);
+          console.log(res.data);
           // window.location.href = "/chats";
           navigate("/chats");
-          window.location.reload();
+          // window.location.reload();
           setLoading(false);
         }
       })
