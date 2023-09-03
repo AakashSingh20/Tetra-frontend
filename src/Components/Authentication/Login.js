@@ -9,7 +9,7 @@ import { Navigate, redirect, useNavigate } from "react-router-dom";
 import BASE_URL from "../../config/url";
 import { set } from "mongoose";
 
-export const Login = () => {
+export const Login = ({ trigger_page }) => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   const [email, setEmail] = useState();
@@ -38,14 +38,15 @@ export const Login = () => {
         if (res.status === 200) {
           localStorage.setItem("userInfo", JSON.stringify(res.data));
           console.log(res.data);
-          // window.location.href = "/chats";
-          navigate("/chats");
+          window.location.href = "/chats";
+          // trigger_page();
+          // navigate("/chats");
           // window.location.reload();
           setLoading(false);
         }
       })
       .catch((err) => {
-        // console.log(err);
+        console.log(err);
         setLoading(false);
         toast({
           title: "Invalid Credentials",

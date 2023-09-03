@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -15,9 +15,15 @@ import { Login } from "../Components/Authentication/Login";
 import { Signup } from "../Components/Authentication/Signup";
 import Coming from "./Coming";
 import { useNavigate } from "react-router-dom";
+import Chats from "./Chats";
 
 export const Home = () => {
   // const navigate = useNavigate();
+  const [changePage, setchangePage] = useState(true);
+
+  const trigger_page = () => {
+    setchangePage(!changePage);
+  };
 
   return (
     <Container maxW="xl" centerContent>
@@ -47,7 +53,7 @@ export const Home = () => {
           </TabList>
           <TabPanels>
             <TabPanel>
-              <Login />
+              <Login trigger_page={trigger_page} />
             </TabPanel>
             <TabPanel>
               {/* <Signup /> */}

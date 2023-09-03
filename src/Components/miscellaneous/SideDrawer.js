@@ -28,7 +28,7 @@ import { Effect } from "react-notification-badge";
 import BASE_URL from "../../config/url";
 import { useNavigate } from "react-router-dom";
 
-const SideDrawer = () => {
+const SideDrawer = ({ trigger_page }) => {
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -50,6 +50,7 @@ const SideDrawer = () => {
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
     // window.location.reload();
+    // trigger_page();
     navigate("/");
   };
 
