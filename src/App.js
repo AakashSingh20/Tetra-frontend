@@ -9,12 +9,12 @@ function App() {
   }
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/chats" element={<Chats />} />
-        </Routes>
-      </BrowserRouter>
+      {/* <BrowserRouter> */}
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/chats" element={<Chats />} />
+      </Routes>
+      {/* </BrowserRouter> */}
     </>
   );
 }

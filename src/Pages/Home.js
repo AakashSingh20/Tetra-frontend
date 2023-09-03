@@ -14,9 +14,11 @@ import {
 import { Login } from "../Components/Authentication/Login";
 import { Signup } from "../Components/Authentication/Signup";
 import Coming from "./Coming";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+  // const navigate = useNavigate();
+
   return (
     <Container maxW="xl" centerContent>
       <Box

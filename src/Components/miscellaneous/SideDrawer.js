@@ -26,6 +26,7 @@ import { Spinner } from "@chakra-ui/react";
 import NotificationBadge from "react-notification-badge";
 import { Effect } from "react-notification-badge";
 import BASE_URL from "../../config/url";
+import { useNavigate } from "react-router-dom";
 
 const SideDrawer = () => {
   const [search, setSearch] = useState("");
@@ -34,6 +35,7 @@ const SideDrawer = () => {
   const [loadingChat, setLoadingChat] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const toast = useToast();
+  const navigate = useNavigate();
   const {
     setSelectedChat,
     user,
@@ -47,7 +49,8 @@ const SideDrawer = () => {
 
   const logoutHandler = () => {
     localStorage.removeItem("userInfo");
-    window.location.reload();
+    // window.location.reload();
+    navigate("/");
   };
 
   const handleSearch = async () => {

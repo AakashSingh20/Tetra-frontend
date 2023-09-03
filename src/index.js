@@ -5,6 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import ChatProvider from "./Context/ChatProvider";
 import { ColorModeScript } from "@chakra-ui/react";
 import theme from "./theme";
+import { BrowserRouter } from "react-router-dom";
 
 // const colors = {
 //   brand: {
@@ -18,12 +19,14 @@ import theme from "./theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <ChatProvider>
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <App />
-    </ChakraProvider>
-  </ChatProvider>
+  <BrowserRouter>
+    <ChatProvider>
+      <ChakraProvider theme={theme}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <App />
+      </ChakraProvider>
+    </ChatProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

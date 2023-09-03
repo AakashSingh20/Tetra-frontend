@@ -2,12 +2,12 @@ import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
-import { Navigate, useNavigate } from "react-router-dom";
-// import { Navigate } from "react-router-dom";
+import { Navigate, redirect, useNavigate } from "react-router-dom";
 import BASE_URL from "../../config/url";
+import { set } from "mongoose";
 
 export const Login = () => {
   const [show, setShow] = useState(false);
@@ -37,10 +37,23 @@ export const Login = () => {
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem("userInfo", JSON.stringify(res.data));
+          // console.log(res.data);
           // window.location.href = "/chats";
           navigate("/chats");
+          window.location.reload();
           setLoading(false);
         }
+      })
+      .catch((err) => {
+        // console.log(err);
+        setLoading(false);
+        toast({
+          title: "Invalid Credentials",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+          position: "bottom",
+        });
       });
   };
 
