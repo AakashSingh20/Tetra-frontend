@@ -5,7 +5,7 @@ import { VStack } from "@chakra-ui/layout";
 import { useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 import BASE_URL from "../../config/url";
 
@@ -17,7 +17,7 @@ export const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const toast = useToast();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const submitHandler = async () => {
     setLoading(true);
@@ -37,7 +37,8 @@ export const Login = () => {
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem("userInfo", JSON.stringify(res.data));
-          window.location.href = "/chats";
+          // window.location.href = "/chats";
+          navigate("/chats");
           setLoading(false);
         }
       });
