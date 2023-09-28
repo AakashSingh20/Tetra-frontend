@@ -39,7 +39,7 @@ export const Home = () => {
           <Flex alignItems="center">
             <Spacer />
             <Text fontSize="4xl" fontFamily="Work sans">
-              X
+              Tetra
             </Text>
             <Spacer />
           </Flex>

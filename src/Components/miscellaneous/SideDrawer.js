@@ -140,7 +140,7 @@ const SideDrawer = ({ trigger_page }) => {
         {/* <Spacer /> */}
 
         <Text fontSize="2xl" fontFamily="Work sans">
-          X
+          Tetra
         </Text>
         {/* <Spacer /> */}
 

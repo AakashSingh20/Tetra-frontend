@@ -38,10 +38,10 @@ export const Login = ({ trigger_page }) => {
         if (res.status === 200) {
           localStorage.setItem("userInfo", JSON.stringify(res.data));
           console.log(res.data);
-          window.location.href = "/chats";
+          // window.location.href = "/chats";
           // trigger_page();
-          // navigate("/chats");
-          // window.location.reload();
+          navigate("/chats");
+          window.location.reload();
           setLoading(false);
         }
       })
