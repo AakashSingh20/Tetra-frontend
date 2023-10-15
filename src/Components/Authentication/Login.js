@@ -41,7 +41,7 @@ export const Login = ({ trigger_page }) => {
           // window.location.href = "/chats";
           // trigger_page();
           navigate("chats");
-          window.location.reload();
+          // window.location.reload();
           setLoading(false);
         }
       })
