@@ -16,8 +16,8 @@ const ChatProvider = ({ children }) => {
   useEffect(() => {
     if (localStorage.getItem("userInfo") !== "undefined") {
       const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+      console.log("userinfo", userInfo);
       setUser(userInfo);
-      console.log(userInfo);
     } else {
       console.log("no user");
     }

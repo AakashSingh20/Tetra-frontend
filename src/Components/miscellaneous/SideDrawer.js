@@ -28,7 +28,7 @@ import { Effect } from "react-notification-badge";
 import BASE_URL from "../../config/url";
 import { useNavigate } from "react-router-dom";
 
-const SideDrawer = ({ trigger_page }) => {
+const SideDrawer = () => {
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);

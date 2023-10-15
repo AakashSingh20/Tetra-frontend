@@ -7,7 +7,7 @@ import MyChats from "../Components/MyChats";
 import Chatbox from "../Components/ChatBox";
 import { Flex, Spacer } from "@chakra-ui/react";
 
-const Chatpage = ({ trigger_page }) => {
+const Chatpage = () => {
   const logout = () => {
     localStorage.removeItem("token");
     window.location.href = "/";
@@ -19,7 +19,7 @@ const Chatpage = ({ trigger_page }) => {
   return (
     <>
       <div style={{ width: "100%" }}>
-        {user && <SideDrawer trigger_page={trigger_page} />}
+        {user && <SideDrawer />}
         <Box
           d="flex"
           justifyContent="space-between"
